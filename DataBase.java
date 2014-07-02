@@ -21,12 +21,19 @@ public class DataBase {
 	 * Constructor, and config here.
 	 */
 	public DataBase(){
-		this.geoCodePath = new String("GeoCode103.csv");
-		this.outputCSVPath = new String("QueryResult103.csv");
-		this.queryTablePath = new String("QueryTable103.csv");
+		
 		this.geoDataAL = new ArrayList<GeoData>();
 		this.geoHashTable = new Hashtable<String, GeoData>();
 		this.queryList = new ArrayList<String>();
+	}
+	/*
+	 * because we used Singulton method, so we can't
+	 * pass parameters through constructor
+	 * */
+	public void SetPath(String GeoCodeTableName, String QueryTableName, String QueryResultName){
+		this.geoCodePath = new String(GeoCodeTableName);
+		this.outputCSVPath = new String(QueryResultName);
+		this.queryTablePath = new String(QueryTableName);
 	}
 
 	public static DataBase GetDataBase(){
