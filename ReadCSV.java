@@ -29,7 +29,8 @@ public class ReadCSV extends Procedure{
                 	tmpGData.townshipName = this.ParseCSV(item[3]);
                 	tmpGData.villageCode = this.ParseCSV(item[4]);
                 	tmpGData.villageName = this.ParseCSV(item[5]);
-                              	
+                    tmpGData.totalCode = tmpGData.cityCode + tmpGData.townshipCode + tmpGData.villageCode;
+                	
                 	myDB.geoDataAL.add(tmpGData);
             
                 	/*

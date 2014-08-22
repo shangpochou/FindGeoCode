@@ -19,7 +19,7 @@ public class WriteQueryResult extends Procedure{
 
 		String tmpTitle = new String();
 		tmpTitle = tmpTitle + '"'+"CityCode"+'"'+","+ '"'+"CityName"+'"'+","+'"'+"TownshipCode"+ '"';
-		tmpTitle = tmpTitle + "," + '"'+"TownshipName"+'"'+","+'"'+"VillageCode"+'"'+","+ '"'+"VillageName"+'"';
+		tmpTitle = tmpTitle + "," + '"'+"TownshipName"+'"'+","+'"'+"VillageCode"+'"'+","+ '"'+"VillageName"+'"' + "," + '"' + "TotalCode" + '"';
 		bw.write(tmpTitle);
 	    bw.newLine();
 
@@ -40,7 +40,9 @@ public class WriteQueryResult extends Procedure{
 			temp = temp + '"' + tmpGData.cityCode + '"' + "," + '"' + tmpGData.townshipCode + '"'+ "," + '"' + tmpGData.totalCode + '"';
 	*/		
 			temp = temp + '"'  + "\t"+ tmpGData.cityCode +'"' + "," + '"' + tmpGData.cityName + '"' + ","  + '"' + "\t" + tmpGData.townshipCode  +'"' + ",";
-			temp = temp + '"' + tmpGData.townshipName + '"'+ "," + '"' + "\t" + tmpGData.villageCode +'"'+ "," + '"' + tmpGData.villageName + '"';
+			temp = temp + '"' + tmpGData.townshipName + '"'+ "," + '"' + "\t" + tmpGData.villageCode +'"'+ "," + '"' + tmpGData.villageName + '"' + "," + '"' + tmpGData.totalCode + '"';
+			
+			
 
 
 			bw.write(temp);
